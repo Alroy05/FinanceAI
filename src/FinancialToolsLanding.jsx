@@ -47,17 +47,19 @@ const FinancialToolsLanding = () => {
               </div>
               <span className="text-xl font-bold">FinanceAI</span>
             </div>
-            
+
             <div className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-gray-300 hover:text-orange-500 transition-colors">Features</a>
               <a href="#tools" className="text-gray-300 hover:text-orange-500 transition-colors">Tools</a>
               <a href="#about" className="text-gray-300 hover:text-orange-500 transition-colors">About</a>
-              <button className="bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-lg font-medium hover:opacity-90 cursor-pointer transition-opacity">
+              <button
+                onClick={() => document.getElementById('tools').scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-lg font-medium hover:opacity-90 cursor-pointer transition-opacity">
                 Get Started
               </button>
             </div>
 
-            <button 
+            <button
               className="md:hidden text-white cursor-pointer"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -84,20 +86,20 @@ const FinancialToolsLanding = () => {
       {/* Hero Section */}
       <section className="relative pt-30 min-h-screen flex items-center justify-center px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-red-500/5"></div>
-        
+
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-4 -right-4 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-8 -left-8 w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="mb-12">
             <div className="inline-flex items-center px-6 py-3 bg-gray-900/80 border border-gray-700/50 rounded-full mb-8 backdrop-blur-sm">
               <Zap className="w-5 h-5 text-orange-500 mr-3" />
               <span className="text-sm text-gray-300 font-medium">AI-Powered Financial Solutions</span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1]">
               Smart Financial
               <br />
@@ -105,15 +107,15 @@ const FinancialToolsLanding = () => {
                 Decision Making
               </span>
             </h1>
-            
+
             <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Harness the power of AI to optimize your taxes, investments, and financial reports. 
+              Harness the power of AI to optimize your taxes, investments, and financial reports.
               Make smarter decisions with our suite of intelligent financial tools.
             </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
-            <button 
+            <button
               onClick={() => document.getElementById('tools').scrollIntoView({ behavior: 'smooth' })}
               className="bg-gradient-to-r from-orange-500 to-red-500 px-8 py-4 rounded-xl font-semibold text-lg hover:opacity-90 transition-all transform hover:scale-105 flex items-center justify-center shadow-lg shadow-orange-500/25 cursor-pointer"
             >
@@ -126,22 +128,22 @@ const FinancialToolsLanding = () => {
 
           {/* Feature Cards */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-      {[
-        { icon: Shield, title: "Secure & Private", desc: "Bank-level security protocols" },
-        { icon: Zap, title: "Lightning Fast", desc: "Real-time data analysis" },
-        { icon: Bot, title: "AI-Powered", desc: "Advanced ML algorithms" }
-      ].map((feature, index) => (
-        <div key={index} className="bg-gray-900/50 border border-gray-800/50 px-8 py-10 rounded-2xl backdrop-blur-sm hover:border-orange-500/30 hover:bg-gray-900/70 transition-all duration-300 group flex items-center justify-between gap-8">
-          <div className='flex flex-col justify-start items-start flex-1 min-w-0'>
-            <h3 className="font-bold text-xl mb-4 text-white leading-tight">{feature.title}</h3>
-            <p className="text-gray-400 leading-relaxed text-base">{feature.desc}</p>
+            {[
+              { icon: Shield, title: "Secure & Private", desc: "Bank-level security protocols" },
+              { icon: Zap, title: "Lightning Fast", desc: "Real-time data analysis" },
+              { icon: Bot, title: "AI-Powered", desc: "Advanced ML algorithms" }
+            ].map((feature, index) => (
+              <div key={index} className="bg-gray-900/50 border border-gray-800/50 px-8 py-10 rounded-2xl backdrop-blur-sm hover:border-orange-500/30 hover:bg-gray-900/70 transition-all duration-300 group flex items-center justify-between gap-8">
+                <div className='flex flex-col justify-start items-start flex-1 min-w-0'>
+                  <h3 className="font-bold text-xl mb-4 text-white leading-tight">{feature.title}</h3>
+                  <p className="text-gray-400 leading-relaxed text-base">{feature.desc}</p>
+                </div>
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 border border-orange-500/10">
+                  <feature.icon className="w-8 h-8 text-orange-500" strokeWidth={2} />
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="w-16 h-16 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 border border-orange-500/10">
-            <feature.icon className="w-8 h-8 text-orange-500" strokeWidth={2} />
-          </div>
-        </div>  
-      ))}
-    </div>
         </div>
       </section>
 
@@ -162,15 +164,15 @@ const FinancialToolsLanding = () => {
               <div key={tool.id} className="group relative">
                 {/* Glow effect */}
                 <div className={`absolute -inset-0.5 bg-gradient-to-r ${tool.gradient} rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
-                
+
                 <div className="relative bg-gray-900/80 border border-gray-800/50 rounded-2xl p-8 hover:border-orange-500/30 transition-all duration-500 transform hover:-translate-y-3 backdrop-blur-sm">
                   <div className={`w-20 h-20 bg-gradient-to-r ${tool.gradient} rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-orange-500/20`}>
                     <tool.icon className="w-10 h-10 text-white" />
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold mb-5 text-white group-hover:text-orange-400 transition-colors">{tool.title}</h3>
                   <p className="text-gray-400 mb-8 leading-relaxed">{tool.description}</p>
-                  
+
                   <ul className="space-y-3 mb-10">
                     {tool.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-gray-300">
@@ -179,8 +181,8 @@ const FinancialToolsLanding = () => {
                       </li>
                     ))}
                   </ul>
-                  
-                  <button 
+
+                  <button
                     onClick={() => setCurrentPage(tool.id)}
                     className={`w-full bg-gradient-to-r ${tool.gradient} px-6 py-4 rounded-xl font-semibold hover:opacity-90 transition-all flex items-center justify-center group-hover:scale-105 shadow-lg shadow-orange-500/25 text-white cursor-pointer`}
                   >
@@ -201,38 +203,38 @@ const FinancialToolsLanding = () => {
               <div className="inline-block px-4 py-2 bg-orange-500/10 border border-orange-500/20 rounded-full mb-6">
                 <span className="text-orange-500 text-sm font-medium">Why Choose Us</span>
               </div>
-              
+
               <h2 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
                 Why Choose Our{' '}
                 <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                   AI Platform?
                 </span>
               </h2>
-              
+
               <p className="text-gray-400 mb-12 text-lg leading-relaxed">
-                Our cutting-edge AI technology processes vast amounts of financial data to provide 
+                Our cutting-edge AI technology processes vast amounts of financial data to provide
                 you with actionable insights and recommendations tailored to your unique financial situation.
               </p>
-              
+
               <div className="space-y-8">
                 {[
-                  { 
-                    title: "Advanced AI Algorithms", 
+                  {
+                    title: "Advanced AI Algorithms",
                     desc: "State-of-the-art machine learning models trained on financial data",
                     icon: "🧠"
                   },
-                  { 
-                    title: "Real-time Data Processing", 
+                  {
+                    title: "Real-time Data Processing",
                     desc: "Live market data integration with instant analysis and insights",
                     icon: "⚡"
                   },
-                  { 
-                    title: "Personalized Recommendations", 
+                  {
+                    title: "Personalized Recommendations",
                     desc: "Tailored financial advice based on your unique profile and goals",
                     icon: "🎯"
                   },
-                  { 
-                    title: "Secure & Compliant", 
+                  {
+                    title: "Secure & Compliant",
                     desc: "Enterprise-grade security with full regulatory compliance",
                     icon: "🔒"
                   }
@@ -249,7 +251,7 @@ const FinancialToolsLanding = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="relative order-1 lg:order-2">
               {/* Floating dashboard mockup */}
               <div className="relative">
@@ -265,14 +267,14 @@ const FinancialToolsLanding = () => {
                         <div className="text-xs text-gray-400">financeai.com/dashboard</div>
                       </div>
                     </div>
-                    
+
                     {/* Dashboard content */}
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
                         <div className="bg-gray-800 h-4 rounded-lg w-32"></div>
                         <div className="bg-orange-500/50 h-4 rounded-lg w-20"></div>
                       </div>
-                      
+
                       <div className="grid grid-cols-2 gap-4">
                         <div className="bg-gray-800 h-20 rounded-lg p-3">
                           <div className="bg-orange-500/30 h-2 rounded w-16 mb-2"></div>
@@ -283,7 +285,7 @@ const FinancialToolsLanding = () => {
                           <div className="bg-gray-700 h-2 rounded w-16"></div>
                         </div>
                       </div>
-                      
+
                       <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 h-8 rounded-lg"></div>
                       <div className="space-y-2">
                         <div className="bg-gray-800 h-3 rounded w-3/4"></div>
@@ -294,7 +296,7 @@ const FinancialToolsLanding = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Floating elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-orange-500/30 to-red-500/30 rounded-full blur-xl animate-pulse"></div>
               <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-r from-purple-500/20 to-orange-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
@@ -313,7 +315,7 @@ const FinancialToolsLanding = () => {
             <span className="text-xl font-bold">FinanceAI</span>
           </div>
           <p className="text-gray-400 mb-4">Empowering smart financial decisions with AI</p>
-          <p className="text-gray-500 text-sm">© 2024 FinanceAI. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">Made with ❤️ By Raul Heslin Rebello</p>
         </div>
       </footer>
     </div>
@@ -326,7 +328,7 @@ const FinancialToolsLanding = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
-              <button 
+              <button
                 onClick={() => setCurrentPage('home')}
                 className="text-gray-400 hover:text-orange-500 cursor-pointer transition-colors"
               >
