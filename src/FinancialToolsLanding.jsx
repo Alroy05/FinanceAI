@@ -315,7 +315,7 @@ const FinancialToolsLanding = () => {
             <span className="text-xl font-bold">FinanceAI</span>
           </div>
           <p className="text-gray-400 mb-4">Empowering smart financial decisions with AI</p>
-          <p className="text-gray-500 text-sm">Made with ❤️ By Raul Hesline Rebello</p>
+          <p className="text-gray-500 text-sm">Made with ❤️ By Raul Hesline Rebello, Aric Tuscano, Sinclair Pereira & Aryan Dabre </p>
         </div>
       </footer>
     </div>
