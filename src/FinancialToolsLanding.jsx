@@ -31,7 +31,7 @@ const FinancialToolsLanding = () => {
       icon: FileText,
       features: ['Ticker Analysis', 'Comprehensive Reports', 'Market Insights', 'Data Visualization'],
       gradient: 'from-orange-500 to-pink-500',
-      embedUrl: 'https://lucifer7210-finance-report-generator.hf.space/'
+      embedUrl: 'https://raulrebello-finance-report-generator.hf.space/'
     }
   ];
 
